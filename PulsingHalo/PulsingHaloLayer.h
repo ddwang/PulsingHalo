@@ -23,4 +23,6 @@
 
 - (id)initWithRepeatCount:(float)repeatCount;
 
+-(void) restart;
+
 @end

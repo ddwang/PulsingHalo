@@ -33,6 +33,7 @@
     [super viewDidLoad];
 
     self.halo = [PulsingHaloLayer layer];
+	self.halo.repeatCount = 0;
     self.halo.position = self.beaconView.center;
     [self.view.layer insertSublayer:self.halo below:self.beaconView.layer];
     
@@ -82,6 +83,10 @@
     self.rLabel.text = [@(self.rSlider.value) stringValue];
     self.gLabel.text = [@(self.gSlider.value) stringValue];
     self.bLabel.text = [@(self.bSlider.value) stringValue];
+}
+
+- (IBAction)handlePing:(id)sender {
+	[self.halo restart];
 }
 
 @end

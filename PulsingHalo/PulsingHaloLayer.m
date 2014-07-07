@@ -95,4 +95,14 @@
     self.animationGroup.animations = animations;
 }
 
+-(void) restart
+{
+	if (self.animationGroup)
+	{
+		[self removeAnimationForKey:@"pulse"];
+		[self addAnimation:self.animationGroup
+					forKey:@"pulse"];
+	}
+}
+
 @end
